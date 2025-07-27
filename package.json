@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-prod": "node --max_old_space_size=8192 ng build --prod --base-href=/my-portfolio/",
+  "build-dev": "node --max_old_space_size=4096 ng build"
   },
   "private": true,
   "dependencies": {
