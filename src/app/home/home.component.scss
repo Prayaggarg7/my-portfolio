@@ -1,0 +1,108 @@
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5rem;
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #ffffff;
+  overflow: hidden;
+
+  .left-content {
+    flex: 1;
+    animation: fadeInLeft 1s ease-in-out;
+    
+    .main-heading {
+      font-size: 3.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+
+      .highlight {
+        color: #00bcd4;
+        text-shadow: 0 0 10px #00bcd4;
+      }
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 1.5rem 0;
+      color: #d1d1d1;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .contact-btn {
+      background: transparent;
+      border: 2px solid #00bcd4;
+      color: #00bcd4;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 20px;
+
+      &:hover {
+        background: #00bcd4;
+        color: #000;
+        box-shadow: 0 0 20px #00bcd4;
+      }
+    }
+  }
+
+  .right-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: fadeInRight 1s ease-in-out;
+
+    img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 188, 212, 0.3);
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+
+    .left-content, .right-content {
+      max-width: 100%;
+    }
+
+    .right-content {
+      margin-top: 2rem;
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
