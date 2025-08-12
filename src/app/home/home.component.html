@@ -1,17 +1,49 @@
 <section id="home" class="home-section">
+  <div class="geometric-bg"></div>
+  
   <div class="left-content">
+    <div class="greeting">👋 Hello there!</div>
     <h1 class="main-heading">Hi, I'm <span class="highlight">PRAYAG GARG</span></h1>
-    <p class="tagline">Automation Engineer | Full Stack Developer | Tech Innovator</p>
-    <p>
-      I’m an MCA graduate and Full Stack Developer with 3+ years of experience. Originally from a Mechanical Engineering background, I took the unconventional path — dropped out from IIT prep, qualified GATE, and transitioned into tech with a passion for building real-world systems.
+    
+    <div class="tagline-container">
+      <div class="tagline">
+        <span id="role-text" class="tagline-text"></span>
+        <span class="cursor"></span>
+      </div>
+    </div>
+    
+    <p class="description">
+      I'm an MCA graduate and Full Stack Developer with 3+ years of experience. Originally from a Mechanical Engineering background, I took the unconventional path — dropped out from IIT prep, qualified GATE, and transitioned into tech with a passion for building real-world systems.
     </p>
-    <p>
+    
+    <p class="description">
       From creating industrial automation tools to designing production dashboards and scalable web apps using Angular and Spring Boot — I bridge code with impact.
     </p>
-    <button class="contact-btn" (click)="scrollToContact()">Let's Connect</button>
+    
+    <div class="cta-container">
+      <button class="contact-btn" (click)="scrollToContact()">Let's Connect</button>
+      <button class="resume-btn" (click)="downloadResume()">Download Resume</button>
+    </div>
+    
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Technologies</span>
+      </div>
+    </div>
   </div>
 
   <div class="right-content">
-    <img src="assets/Prayag.png" alt="VISION Image" />
+    <div class="image-container">
+      <img src="assets/Prayag.png" alt="Prayag Garg" class="profile-image" />
+    </div>
   </div>
 </section>

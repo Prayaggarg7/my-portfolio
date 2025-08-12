@@ -1,62 +1,65 @@
-<div class="skills-container" id="skills">
-  <div class="skills-heading">
-    <h1>Skills & Certifications</h1>
-    <div class="underline"></div>
+<div class="skills-container" id="skills" #skillsSection>
+  <!-- Background decorations -->
+  <div class="bg-decoration">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="grid-pattern"></div>
   </div>
 
+  <!-- Section Header -->
+  <div class="section-header">
+    <div class="header-content">
+      <span class="section-badge">Technical Expertise</span>
+      <h1 class="section-title">Skills & Certifications</h1>
+      <p class="section-subtitle">Technologies and tools I work with to create exceptional solutions</p>
+    </div>
+  </div>
+
+  <!-- Skills Grid -->
   <div class="skills-grid">
-    <div class="skills-category">
-      <h2>Frontend</h2>
-      <ul>
-        <li>Angular</li>
-        <li>JavaScript</li>
-        <li>Swing (Java)</li>
-      </ul>
-    </div>
+    <!-- Skill Cards -->
+    <div class="skill-card" 
+         *ngFor="let category of categories; let i = index"
+         [style.animation-delay]="(i * 0.1) + 's'"
+         [class.certifications]="category.id === 'certifications'">
+      <div class="card-header">
+        <div class="icon-wrapper" [style.background]="category.color">
+          <i class="fas {{category.icon}}"></i>
+        </div>
+        <h3>{{category.title}}</h3>
+      </div>
 
-    <div class="skills-category">
-      <h2>Backend</h2>
-      <ul>
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>REST API</li>
-        <li>JWT</li>
-        <li>OOPS / OOP</li>
-      </ul>
-    </div>
+      <!-- Skills List -->
+      <div class="skills-list" *ngIf="category.skills.length > 0">
+        <div class="skill-item" *ngFor="let skill of category.skills">
+          <div class="skill-name-wrapper">
+            <span class="skill-name">{{skill.name}}</span>
+            <span class="skill-percent">{{skill.level}}%</span>
+          </div>
+          <div class="skill-level">
+            <div class="level-bar" 
+                 [style.background]="getSkillColor(skill.level)"
+                 [attr.data-level]="skill.level"></div>
+          </div>
+        </div>
+      </div>
 
-    <div class="skills-category">
-      <h2>Database</h2>
-      <ul>
-        <li>MSSQL</li>
-        <li>PostgreSQL</li>
-      </ul>
+      <!-- Certifications List -->
+      <div class="certifications-list" *ngIf="category.certifications">
+        <div class="certification-item" *ngFor="let cert of category.certifications">
+          <div class="cert-badge">{{cert.badge}}</div>
+          <span>{{cert.title}}</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="skills-category">
-      <h2>DevOps / Infra</h2>
-      <ul>
-        <li>Apache Tools</li>
-      </ul>
-    </div>
-
-    <div class="skills-category" id="skill-secondrow">
-      <h2>Misc Tools</h2>
-      <ul>
-        <li>Postman</li>
-        <li>GitHub</li>
-        <li>Excel</li>
-      </ul>
-    </div>
-
-    <div class="skills-category" id="skill-secondrow">
-      <h2>Certifications</h2>
-      <ul>
-        <li>GATE Qualified</li>
-        <li>Spring Boot + Java Backend Development</li>
-        <li>SQL / DBMS Certifications</li>
-        <li>Web Development & GitHub Workflow</li>
-      </ul>
+  <!-- Stats Section -->
+  <div class="stats-section">
+    <div class="stat-item" *ngFor="let stat of stats">
+      <div class="stat-number">{{stat.number}}</div>
+      <div class="stat-label">{{stat.label}}</div>
     </div>
   </div>
 </div>
